@@ -3,29 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Полноразмерная клавиатура</title>
-    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <style>
+        #board {
+            background-color: #444;
+            width: 62rem;
+            border-radius: 2.5rem;
+            margin: 10vh auto;
+            box-sizing: border-box;
+            padding: 3rem 1rem 1rem;
+            position: relative;
+            box-shadow: 0 5px 0 0 #745d5d, 0 6px 15px 3px rgba(0, 0, 0, .5);
+        }
+        #board:after {
+            content: '';
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Logitech_logo.svg');
+            background-size: 5rem;
+            position: absolute;
+            top: .8rem;
+            left: 50%;
+            height: 2rem;
+            width: 5rem;
+            background-repeat: no-repeat;
+            transform: translateX(-50%);
+            filter: invert(1);
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 100rem;
+            color: #FFF;
+            background-color: inherit;
+            margin: .25rem;
+            font-size: 1rem;
+            line-height: 1.4;
+            box-sizing: border-box;
+            border: 0;
+            box-shadow: 0 1px 2px 1px #b19e9e, inset 0 1px 1px 0 #666;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            position: relative;
+            font-family: 'Quicksand', sans-serif;
+        }
+        button svg {
+            vertical-align: middle;
+        }
+        button:active {
+            box-shadow: inset 0 1px 2px 0 #000, 0 1px 1px 0 #666;
+        }
+        button.text {
+            font-size: .8rem;
+        }
+        button.yellow {
+            background-color: #ffd600;
+            box-shadow: 0 1px 2px 1px #000, inset 0 1px 1px 0 #ffff8d;
+            color: #444;
+        }
+        button.yellow:active {
+            box-shadow: inset 0 .5px 2px 1px #000, 0 1px 1px 0 #888;
+        }
+        button[data-small]:after {
+            content: attr(data-small);
+            position: absolute;
+            bottom: .1rem;
+            right: .5rem;
+            font-size: .5rem;
+            font-weight: 500;
+        }
+        .function button {
+            height: 1.8rem;
+        }
+        .arrows {
+            margin: .25rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .arrows .row {
+            justify-content: center;
+        }
+        .arrows button {
+            height: 1.6rem;
+            margin: 0 .25rem;
+        }
+        .left {
+            text-align: left;
+            padding-left: 1.5em;
+        }
+        .right {
+            text-align: right;
+            padding-right: 1.5em;
+        }
+       
+        .space {
+            width: 20rem;
+            border-radius: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Keyboard - CSS</h1>
+    <h1>офоффощщыызхзвы</h1>
     <div id="board">
         <div class="row function">
-            <button class="text">esc</button>
-            <div class="function-keys">
-                <button class="yellow" data-small="F1">1</button>
-                <button class="yellow" data-small="F2">2</button>
-                <button class="yellow" data-small="F3">3</button>
-                <button data-small="F4">&#9650;</button>
-                <button data-small="F5">&#9632;</button>
-                <button data-small="F6">&#9660;</button>
-                <button data-small="F7">&#9654;</button>
-                <button data-small="F8">&#9664;</button>
-                <button data-small="F9">&#9642;</button>
-                <button data-small="F10">&#9651;</button>
-                <button data-small="F11">&#9652;</button>
-                <button data-small="F12">&#9643;</button>
-            </div>
-            <button class="text">ins</button>
+            <button class="text">Esc</button>
+            <button class="yellow" data-small="F1">F1</button>
+            <button class="yellow" data-small="F2">F2</button>
+            <button class="yellow" data-small="F3">F3</button>
+            <button class="yellow" data-small="F4">F4</button>
+            <button class="yellow" data-small="F5">F5</button>
+            <button class="yellow" data-small="F6">F6</button>
+            <button class="yellow" data-small="F7">F7</button>
+            <button class="yellow" data-small="F8">F8</button>
+            <button class="yellow" data-small="F9">F9</button>
+            <button class="yellow" data-small="F10">F10</button>
+            <button class="yellow" data-small="F11">F11</button>
+            <button class="yellow" data-small="F12">F12</button>
+            <button class="text">Ins</button>
+            <button class="text">Del</button>
+        </div>
+        <div class="row">
+            <button class="text">Tab</button>
+            <button>Q</button>
+            <button>W</button>
+            <button>E</button>
+            <button>R</button>
+            <button>T</button>
+            <button>Y</button>
+            <button>U</button>
+            <button>I</button>
+            <button>O</button>
+            <button>P</button>
+            <button class="text">[</button>
+            <button class="text">]</button>
+            <button class="text">Enter</button>
+        </div>
+        <div class="row">
+            <button class="text">Caps Lock</button>
+            <button>A</button>
+            <button>S</button>
+            <button>D</button>
+            <button>F</button>
+            <button>G</button>
+            <button>H</button>
+            <button>J</button>
+            <button>K</button>
+            <button>L</button>
+            <button class="text">;</button>
+            <button class="text">'</button>
+            <button class="text">\</button>
+        </div>
+        <div class="row">
+            <button class="text">Shift</button>
+            <button>Z</button>
+            <button>X</button>
+            <button>C</button>
+            <button>V</button>
+            <button>B</button>
+            <button>N</button>
+            <button>M</button>
+            <button class="text">,</button>
+            <button class="text">.</button>
+            <button class="text">/</button>
+            <button class="text">Shift</button>
+        </div>
+        <div class="row">
+            <button class="text">Ctrl</button>
+            <button class="text">Alt</button>
+            <button class="space">Space</button>
+            <button class="text">Alt</button>
+            <button class="text">Ctrl</button>
         </div>
     </div>
 </body>
